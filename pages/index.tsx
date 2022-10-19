@@ -10,8 +10,23 @@ import SpotifyLogo from "public/Spotify Logo.svg";
 import NetflixLogo from "public/Netflix Logo.svg";
 import ShopifyLogo from "public/Shopify Logo.svg";
 import WalmartLogo from "public/Walmart Logo.svg";
+import Close from "public/Close.svg";
+import SpenseIcon from "public/Spense_Icon.svg";
+import FiberIcon from "public/Fiber_Icon.svg";
+import GradieIcon from "public/Gradie_Icon.svg";
+import { useState } from "react";
 
 const Home: NextPage = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const onClickMenu = () => {
+    setShowModal(true);
+  };
+
+  const onClickCancel = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="bg-[#F3EDE5]">
       <Head>
@@ -22,9 +37,56 @@ const Home: NextPage = () => {
       </Head>
 
       <div>
-        <header className="flex justify-between items-center mx-5 mt-5 mb-10">
+        <header className="flex justify-between items-center mx-5 mt-5 mb-10 relative">
           <Logo />
-          <Menu className="w-6 h-6" />
+          <button className="w-6 h-6" onClick={onClickMenu}>
+            <Menu />
+          </button>
+
+          <div
+            className={`modal w-full rounded-[14px] p-9 bg-white absolute left-0 top-0 ${
+              showModal ? "block" : "hidden"
+            }`}
+          >
+            <div className="flex justify-between">
+              <div className="font-semibold text-[#8898AA]">PRODUCTS</div>
+              <button onClick={onClickCancel}>
+                <Close />
+              </button>
+            </div>
+            <div className="flex flex-col space-y-6 mt-6">
+              <div className="flex">
+                <SpenseIcon className="mr-2 shrink-0" />
+                <div className="flex flex-col text-sm">
+                  <div className="font-bold">Spense</div>
+                  <div>
+                    Spense is a landing page for writers. Great for practicing
+                    absolute positioning and flex layouts.
+                  </div>
+                </div>
+              </div>
+              <div className="flex">
+                <FiberIcon className="mr-2 shrink-0" />
+                <div className="flex flex-col text-sm">
+                  <div className="font-bold">Fiber Landing Page</div>
+                  <div>
+                    An online portfolio generator. Great to practice flex/grid
+                    layouts, and absolute positioning.
+                  </div>
+                </div>
+              </div>
+              <div className="flex">
+                <GradieIcon className="mr-2 shrink-0" />
+                <div className="flex flex-col text-sm">
+                  <div className="font-bold">Gradie Sign Up Page</div>
+                  <div>
+                    Gradie is a simple sign up page, great to practice centering
+                    layouts.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </header>
 
         <main className="flex flex-col items-start mx-[20px]">
@@ -39,7 +101,7 @@ const Home: NextPage = () => {
           <button className="bg-[#133416] rounded text-white px-9 py-4 mb-8">
             Try For Free
           </button>
-          <div className="flex">
+          <div className="flex items-center">
             <div className="text-gray mr-[19px]">
               5.0 Rating based on reviews from:
             </div>
