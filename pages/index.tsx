@@ -56,7 +56,15 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="w-[337px] h-[404px] relative hidden lg:block shrink-0">
-            <Image src={HeroImage} alt="image" />
+            <Image
+              loader={({ src, width, quality }) => {
+                return `https://askme143.github.io/sample-company-site/${src}?w=${width}&q=${
+                  quality || 75
+                }`;
+              }}
+              src={"./Hero Image.png"}
+              alt="image"
+            />
           </div>
         </main>
 
