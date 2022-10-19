@@ -117,11 +117,23 @@ const Home: NextPage = () => {
           <div className="text-gray mb-6 text-center">
             Trusted by 3+ million people at companies like
           </div>
-          <div className="w-full h-fit flex flex-wrap items-center mx-5 mt-[-1rem]">
-            <NetflixLogo className="h-12 mt-4 mx-auto" />
-            <ShopifyLogo className="h-12 mt-4 mx-auto" />
-            <SpotifyLogo className="h-12 mt-4 mx-auto" />
-            <WalmartLogo className="h-12 mt-4 mx-auto" />
+          <div className="w-full h-fit flex flex-wrap justify-center items-center mx-5 mt-[-1rem]">
+            <div className="flex flex-wrap justify-center">
+              <div className="w-56">
+                <NetflixLogo className="h-12 px-2 mt-4 mx-auto" />
+              </div>
+              <div className="w-56 flex">
+                <ShopifyLogo className="h-12 px-2 mt-4 mx-auto" />
+              </div>
+            </div>
+            <div className="flex flex-wrap justify-center">
+              <div className="w-56">
+                <SpotifyLogo className="h-12 px-2 mt-4 mx-auto" />
+              </div>
+              <div className="w-56">
+                <WalmartLogo className="h-12 px-2 mt-4 mx-auto" />
+              </div>
+            </div>
           </div>
         </footer>
       </div>
