@@ -10,6 +10,7 @@ import WalmartLogo from "public/Walmart Logo.svg";
 import { useState } from "react";
 import Header from "components/Header";
 import Image from "next/image";
+import HeroImage from "public/Hero Image.png";
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -27,11 +28,11 @@ const Home: NextPage = () => {
         <link rel="mask-icon" href="/favicon.svg" color="#000000" />
       </Head>
 
-      <div className="w-full max-w-[1180px] mx-auto px-5 flex flex-col items-center ">
+      <div className="w-full max-w-[1220px] mx-auto px-5 lg:px-10 flex flex-col items-center ">
         <Header />
 
         <main className="w-full flex justify-between items-center mt-10 lg:mt-28">
-          <div className="max-w-[713px] flex flex-col items-start mx-auto lg:m-0">
+          <div className="max-w-[713px] flex flex-col items-start mx-auto lg:m-0 lg:mr-10">
             <div className="font-bold text-4xl mb-2">
               Ondeck is your remote{" "}
               <span className="text-[#F6B300]">conference calling tool</span>
@@ -55,7 +56,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="w-[337px] h-[404px] relative hidden lg:block shrink-0">
-            <Image src={"/Hero Image.png"} layout="fill" alt="image" />
+            <Image src={HeroImage} alt="image" />
           </div>
         </main>
 
@@ -64,21 +65,13 @@ const Home: NextPage = () => {
             Trusted by 3+ million people at companies like
           </div>
           <div className="w-full h-fit flex flex-wrap justify-center items-center mt-[-1rem]">
-            <div className="flex flex-wrap justify-center">
-              <div className="w-56">
-                <NetflixLogo className="h-12 px-2 mt-4 mx-auto" />
-              </div>
-              <div className="w-56 flex">
-                <ShopifyLogo className="h-12 px-2 mt-4 mx-auto" />
-              </div>
+            <div className="flex flex-wrap justify-center grow">
+              <NetflixLogo className="h-12 mt-4 px-1 mx-auto" />
+              <ShopifyLogo className="h-12 mt-4 px-1 mx-auto" />
             </div>
-            <div className="flex flex-wrap justify-center">
-              <div className="w-56">
-                <SpotifyLogo className="h-12 px-2 mt-4 mx-auto" />
-              </div>
-              <div className="w-56">
-                <WalmartLogo className="h-12 px-2 mt-4 mx-auto" />
-              </div>
+            <div className="flex flex-wrap justify-center grow">
+              <SpotifyLogo className="h-12 mt-4 px-1 mx-auto" />
+              <WalmartLogo className="h-12 mt-4 px-1 mx-auto" />
             </div>
           </div>
         </footer>
