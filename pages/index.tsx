@@ -33,7 +33,7 @@ const Home: NextPage = () => {
 
         <main className="w-full flex justify-between items-center mt-10 lg:mt-28">
           <div className="max-w-[713px] flex flex-col items-start mx-auto lg:m-0 lg:mr-10">
-            <div className="font-bold text-4xl mb-2">
+            <div className="font-bold text-4xl lg:text-6xl mb-2">
               Ondeck is your remote{" "}
               <span className="text-[#F6B300]">conference calling tool</span>
             </div>
