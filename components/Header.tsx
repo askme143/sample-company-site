@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className="max-w-[1180px] mx-5 lg:mx-auto lg:px-5 mt-5 lg:mt-10 mb-10 flex justify-between items-center relative">
+    <header className="w-full max-w-[1180px] mt-5 lg:mt-10 flex justify-between items-center relative">
       <Logo />
       <div className="flex items-center space-x-10 text-gray">
         <div
