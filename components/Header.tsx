@@ -23,8 +23,10 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full max-w-[1180px] mt-5 lg:mt-10 flex justify-between items-center relative">
-      <Logo />
+    <header className="w-full mt-5 lg:mt-10 flex justify-between items-center relative">
+      <a href="#">
+        <Logo />
+      </a>
       <div className="flex items-center space-x-10 text-gray">
         <div
           ref={ref}

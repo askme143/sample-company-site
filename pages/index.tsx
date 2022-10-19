@@ -63,6 +63,7 @@ const Home: NextPage = () => {
                 }`;
               }}
               src={"./Hero Image.png"}
+              layout="fill"
               alt="image"
             />
           </div>
