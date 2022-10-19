@@ -6,28 +6,21 @@ import { useOutsideClick } from "hooks/useOutsideClick";
 
 const Header = () => {
   const [hover, setHover] = useState(false);
-  const [menuClicked, setMenuClicked] = useState<boolean | null>(null);
+  const [menuClicked, setMenuClicked] = useState<boolean>(false);
   const showModal = menuClicked || hover;
 
-  const onClickProduct: MouseEventHandler<HTMLButtonElement> = (event) => {
-    setMenuClicked((prev) => !prev);
-  };
-  const onClickOutsideProduct = () => {
-    setMenuClicked(false);
-  };
-  const onMouseEnter = () => {
-    setHover(true);
-  };
-  const onMouseLeave = () => {
-    setHover(false);
-    if (menuClicked === false) {
-      setMenuClicked(null);
-    }
-  };
+  const onClickProduct = () => setMenuClicked((prev) => !prev);
+  const onClickOutsideProduct = () => setMenuClicked(false);
+  const onMouseEnter = () => setHover(true);
+  const onMouseLeave: MouseEventHandler = (event) => setHover(false);
+
   const ref = useOutsideClick<HTMLDivElement>(onClickOutsideProduct, () => {});
 
   const onClickMenu = () => setMenuClicked(true);
-  const onClickCancel = () => setMenuClicked(false);
+  const onClickCancel = () => {
+    setMenuClicked(false);
+    setHover(false);
+  };
 
   return (
     <header className="max-w-[1180px] mx-5 lg:mx-auto lg:px-5 mt-5 lg:mt-10 mb-10 flex justify-between items-center relative">

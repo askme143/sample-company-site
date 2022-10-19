@@ -10,10 +10,8 @@ export function useOutsideClick<T extends HTMLElement>(
     function handleClick(event: MouseEvent) {
       if (ref && ref.current && event.target instanceof Node) {
         if (ref.current.contains(event.target)) {
-          console.log("inside");
           onClickInside();
         } else {
-          console.log("outside");
           onClickOutside();
         }
       }
